@@ -1,4 +1,6 @@
 #Scripts here are for the 4 visuals required for the INF4000 module
+
+library(tidyverse)
 #----------------------Line Chart Trend by Cost Category-----------
 cost_long %>% 
   ggplot(aes(x = Year, y = value, colour = cost, group = cost)) +
