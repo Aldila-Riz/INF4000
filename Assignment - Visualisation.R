@@ -3,6 +3,7 @@
 library(tidyverse)
 #----------------------Line Chart Trend by Cost Category-----------
 cost_long %>% 
+  filter(!cost%in%c("Mean cost", "Median cost")) %>% 
   ggplot(aes(x = Year, y = value, colour = cost, group = cost)) +
   geom_point(alpha=0.5,size = 3) +  # Larger points for better visibility
   geom_line(size = 1) +   # Thicker lines
